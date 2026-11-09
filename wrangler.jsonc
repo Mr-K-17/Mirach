@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mirach",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2025-02-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/ws/*"]
+  },
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging"
+      }
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
+}

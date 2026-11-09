@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color tokens: Light theme (Design.md §2.1) */
+    --color-bg: #FFFFFF;
+    --color-surface: #F6F5F3;
+    --color-text: #1C1917;
+    --color-text-muted: #57534E;
+    --color-border: #D6D3D1;
+    --color-border-strong: #78716C;
+    --color-accent: #C2410C;
+    --color-success: #15803D;
+    --color-warning: #B45309;
+    --color-danger: #B91C1C;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Color tokens: Dark theme (Design.md §2.1) */
+      --color-bg: #1C1917;
+      --color-surface: #292524;
+      --color-text: #FAFAF9;
+      --color-text-muted: #A8A29E;
+      --color-border: #44403C;
+      --color-border-strong: #78716C;
+      --color-accent: #FB923C;
+      --color-success: #4ADE80;
+      --color-warning: #FBBF24;
+      --color-danger: #F87171;
+    }
+  }
+
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  /* Accessible focus indicator (Design.md §2.2) */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion preference (Design.md §2.2) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

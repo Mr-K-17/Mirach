@@ -1,0 +1,10 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; connect-src 'self' https://*.googleapis.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com wss:; script-src 'self' https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.googleusercontent.com; font-src 'self'; frame-src 'self' https://*.firebaseapp.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+/api/*
+  Cache-Control: no-store
+  X-Content-Type-Options: nosniff

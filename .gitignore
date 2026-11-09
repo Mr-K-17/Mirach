@@ -1,0 +1,28 @@
+# Environment & secrets (Rules §7, Architecture §17.5)
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+.npm/
+
+# Build and runtime outputs
+dist/
+build/
+.wrangler/
+*.tsbuildinfo
+
+# Data, dumps, and manual exports (Rules §20, EXPORT_SPECIFICATION §1)
+*.sql
+*.sqlite
+*.sqlite3
+*.dump
+exports/
+backups/dumps/
+
+# Logs & OS artifacts
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
