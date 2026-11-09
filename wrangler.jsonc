@@ -10,6 +10,35 @@
     "not_found_handling": "single-page-application",
     "run_worker_first": ["/api/*", "/ws/*"]
   },
+  "d1_databases": [
+    {
+      "binding": "DB_CORE",
+      "database_name": "mirach-core",
+      "database_id": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "binding": "DB_CHAT",
+      "database_name": "mirach-chat",
+      "database_id": "00000000-0000-0000-0000-000000000002"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      { "name": "USER_HUB", "class_name": "UserHub" },
+      { "name": "CONVERSATION_ROOM", "class_name": "ConversationRoom" },
+      { "name": "PRESENCE_REGISTRY", "class_name": "PresenceRegistry" },
+      { "name": "GAME_ROOM", "class_name": "GameRoom" }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["UserHub", "ConversationRoom", "PresenceRegistry", "GameRoom"]
+    }
+  ],
+  "triggers": {
+    "crons": ["0 3 * * *"]
+  },
   "env": {
     "staging": {
       "vars": {

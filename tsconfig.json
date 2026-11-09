@@ -23,6 +23,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*", "tests/**/*", "migrations/**/*"]
